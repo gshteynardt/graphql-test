@@ -4,11 +4,11 @@ const List = () => {
   const { loading, error, pets } = useQueryAllPets();
 
   if (loading) {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
 
   if (error) {
-    return <p>We have a problem {error.message}</p>
+    return <p>We have a problem {error.message}</p>;
   }
 
   return (

@@ -8,7 +8,7 @@ const useQueryAllPets = () => {
 
   const pets = data?.allPets;
 
-  return { loading, error, pets }
+  return { loading, error, pets };
 };
 
 export default useQueryAllPets;

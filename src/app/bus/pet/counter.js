@@ -4,11 +4,11 @@ const Counter = () => {
   const { loading, error, numberPets } = useQueryAvialablePets();
 
   if(loading) {
-    return <p>Loading...</p>
+    return <p>Loading...</p>;
   }
 
   if(error) {
-    return <p>We have a problem {error.message}</p>
+    return <p>We have a problem {error.message}</p>;
   }
 
   return (

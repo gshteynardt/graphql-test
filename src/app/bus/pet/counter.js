@@ -1,7 +1,7 @@
 import useQueryAvialablePets from './hooks/useQueryAvailablePets';
 
 const Counter = () => {
-  const { loading, error, data } = useQueryAvialablePets();
+  const { loading, error, numberPets } = useQueryAvialablePets();
 
   if(loading) {
     return <p>Loading...</p>
@@ -13,7 +13,7 @@ const Counter = () => {
 
   return (
     <p>
-      AvialablePets: { data?.availablePets }
+      AvialablePets: { numberPets }
     </p>
   );
 };

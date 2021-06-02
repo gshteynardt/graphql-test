@@ -16,7 +16,6 @@ const useCustomerCreater = () => {
   const { state, handleChange } = useForm(initialValues);
 
   const onSave = () => {
-
     addUser({
       variables: { account: state },
     });

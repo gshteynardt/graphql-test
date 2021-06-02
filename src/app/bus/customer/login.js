@@ -1,7 +1,7 @@
 import useCustomerAuth from '../customer/hooks/useCustomerAuth';
 
 const Login = () => {
-  const { handleChange, onLogin } = useCustomerAuth();
+  const { isLogged, handleChange, handleLogin, customerName } = useCustomerAuth();
 
   return (
     <>
@@ -18,7 +18,11 @@ const Login = () => {
         placeholder="password"
         onChange={handleChange}
       />
-      <button type="submit" onClick={onLogin}>Login</button>
+      <button type="submit" onClick={handleLogin}>Login</button>
+      {
+        isLogged &&
+        <p>Authorized Customer: {customerName}</p>
+      }
     </>
   );
 };

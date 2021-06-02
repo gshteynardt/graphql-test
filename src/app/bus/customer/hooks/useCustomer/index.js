@@ -1,44 +1,33 @@
-import { useState } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import { loader } from 'graphql.macro';
 
+import useForm from '../useForm';
+
 const mutationCreateAccount = loader('./gql/mutationCreateAccount.graphql');
+
+const initialValues = {
+  name: '',
+  username: '',
+  password: '',
+};
 
 const useCustomer = () => {
   const [addUser, { loading, error, data }] = useMutation(mutationCreateAccount);
-
-  const [state, setState] = useState({
-    account: {
-      name: '',
-      username: '',
-      password: '',
-    },
-  });
-
-  const handleChange = event => {
-    event.persist();
-    setState(prev => ({
-      account: {
-        ...prev.account,
-        [event.target.name]: event.target.value,
-      },
-    }));
-  };
+  const { state, handleChange } = useForm(initialValues);
 
   const onSave = () => {
-    const { account } = state;
 
     addUser({
-      variables: { account },
+      variables: { account: state },
     });
   };
 
-  return { 
+  return {
     state,
     loading,
     error,
     user: data?.createAccount.name,
-    handleChange, 
+    handleChange,
     onSave,
   };
 };

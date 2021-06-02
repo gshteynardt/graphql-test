@@ -1,7 +1,7 @@
-import useCustomer from './hooks/useCustomer';
+import useCustomerCreater from './hooks/useCustomerCreater';
 
 const Customer = () => {
-  const { handleChange, onSave, loading, error, user } = useCustomer();
+  const { handleChange, onSave, loading, error, user } = useCustomerCreater();
 
   if (loading) {
     return <p>Loading...</p>;

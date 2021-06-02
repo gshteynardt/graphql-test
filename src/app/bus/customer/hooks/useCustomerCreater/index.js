@@ -11,7 +11,7 @@ const initialValues = {
   password: '',
 };
 
-const useCustomer = () => {
+const useCustomerCreater = () => {
   const [addUser, { loading, error, data }] = useMutation(mutationCreateAccount);
   const { state, handleChange } = useForm(initialValues);
 
@@ -32,4 +32,4 @@ const useCustomer = () => {
   };
 };
 
-export default useCustomer;
+export default useCustomerCreater;

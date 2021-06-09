@@ -1,0 +1,8 @@
+subscription PetReturned {
+  petReturned {
+    pet {
+      id
+      name
+    }
+  }
+}
